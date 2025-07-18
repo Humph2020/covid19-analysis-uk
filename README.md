@@ -1,17 +1,70 @@
-# Analyzing Global COVID-19 Trends and Vaccination Progress with a Focus on the United Kingdom
+## 📌 Project Title  
+**Analyzing Global COVID-19 Trends and Vaccination Progress with a Focus on the UK**  
+*A Public Health Data Analysis Using BigQuery*
 
-## Introduction
+## 📖 Introduction
 
-This project explores how COVID-19 cases, deaths, and vaccination efforts evolved globally, with a specific focus on the United Kingdom. Using SQL and Google BigQuery, I analyzed real-world data from `covid19_open_data` to gain public health insights that could support NHS data-driven decisions.
+This project explores global COVID-19 trends with a focused lens on the United Kingdom. Using BigQuery's public datasets, the analysis examines confirmed cases, death rates, and vaccination progress from early 2020 to 2023.
 
-## Tools & Technologies Used
+The goal is to derive actionable insights from public health data to support decision-making in healthcare, especially for environments like the NHS. The project also compares the UK's vaccination rollout with that of the United States, providing a benchmark for evaluating public health strategies.
 
-- **Google BigQuery** – Cloud-based SQL data warehouse
-- **SQL** – For querying and data transformation
-- **Google Looker Studio** – For data visualization
+## 🧰 Tools & Technologies
 
-## Data Source
+- Google BigQuery – SQL queries and data processing  
+- Looker Studio – Dashboard and visualizations  
+- GitHub – Version control and portfolio showcase  
+- Dataset Used: `bigquery-public-data.covid19_open_data.covid19_open_data`
 
-- **Dataset:** `bigquery-public-data.covid19_open_data.covid19_open_data`
-- **Provider:** Google Public Datasets
-- Contains global COVID-19 data including daily cases, deaths, and vaccination info.
+## 🔍 Objectives
+
+- Analyze daily and monthly COVID-19 case and death trends in the UK  
+- Compare the UK’s vaccination progress with the US  
+- Visualize patterns to understand when major surges or improvements occurred  
+- Create a shareable dashboard and GitHub repository for job applications (NHS/data analyst roles)
+
+## 📊 Key Analyses
+
+### 1️⃣ UK Daily COVID-19 Cases and Deaths
+
+```sql
+
+SELECT
+  date,
+  country_name,
+  new_confirmed AS daily_cases,
+  new_deceased AS daily_deaths
+FROM
+  `bigquery-public-data.covid19_open_data.covid19_open_data`
+WHERE
+  country_name = 'United Kingdom'
+  AND new_confirmed IS NOT NULL
+ORDER BY date;
+
+### 2️⃣ Monthly Averages of New Cases and Deaths
+
+
+SELECT
+  FORMAT_DATE('%Y-%m', date) AS month,
+  AVG(new_confirmed) AS avg_cases,
+  AVG(new_deceased) AS avg_deaths
+FROM
+  `bigquery-public-data.covid19_open_data.covid19_open_data`
+WHERE
+  country_name = 'United Kingdom'
+  AND new_confirmed IS NOT NULL
+GROUP BY month
+ORDER BY month;
+
+3️⃣ UK vs US Vaccination Comparison
+sql
+Copy code
+SELECT
+  date,
+  country_name,
+  cumulative_persons_vaccinated
+FROM
+  `bigquery-public-data.covid19_open_data.covid19_open_data`
+WHERE
+  country_name IN ('United Kingdom', 'United States')
+  AND cumulative_persons_vaccinated IS NOT NULL
+ORDER BY date;
