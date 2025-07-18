@@ -82,7 +82,7 @@ A visual dashboard was created using Looker Studio, displaying:
 - UK vaccine rollout was faster than several other countries during early stages
 
 ## Conclusion
-This project demonstrates the power of cloud-based public health analysis using BigQuery and SQL. The NHS and other public institutions can benefit from fast, data-driven responses during future health emergencies.
+This project demonstrates the power of cloud-based public health analysis using BigQuery and SQL. Due to data availability limitations for the United States in the BigQuery dataset, Canada was selected as an alternative for comparison.
 
 ---
 
