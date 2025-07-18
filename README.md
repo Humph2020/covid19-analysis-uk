@@ -1,5 +1,4 @@
-## 📌 Project Title  
-**Analyzing Global COVID-19 Trends and Vaccination Progress with a Focus on the UK**  
+## 📂 Analyzing Global COVID-19 Trends and Vaccination Progress with a Focus on the UK
 *A Public Health Data Analysis Using BigQuery*
 
 ## 📖 Introduction
