@@ -3,7 +3,7 @@
 
 ### 📌 Description
 
-This project explores global COVID-19 trends with a focuse on the United Kingdom. Using BigQuery's public datasets, the analysis examines confirmed cases, death rates, and vaccination progress from early 2020 to 2023. This project also compares the UK's vaccination rollout with that of Canada.
+This project presents global COVID-19 trends with a focuse on the United Kingdom. Using BigQuery's public datasets. I cleaned and analyzed the datasets to examines confirmed cases, death rates, and vaccination progress from early 2020 to 2023.
 
 ###  Objectives
 
@@ -70,19 +70,28 @@ ORDER BY date;
 ```
 ---
 
-## 📈 Dashboard
-A visual dashboard was created using Looker Studio, displaying:
-- Daily trends
+## 📈 Visualizations
+
+### Dashboard
+A visual dashboard was created using Google spreadsheets, displaying:
 - Monthly averages
 - Comparative vaccination charts
 
-## Key Insights
-- Clear spikes in cases during 2020 and 2021
+### 1. Monthly COVID-19 Cases and Deaths in the UK
+- Spikes in early 2021 indicate pandemic waves.
+- Deaths follow similar trends but lag behind cases.
+
+### 2. UK vs Canada Vaccination Progress
+- UK's rollout was sharper and faster than Canada's.
+- Canada started tracking earlier but grew slower initially.
 - Vaccination helped reduce deaths significantly in the UK by late 2021
-- UK vaccine rollout was faster than several other countries during early stages
 
 ## Conclusion
-This project demonstrates the power of cloud-based public health analysis using BigQuery and SQL. Due to data availability limitations for the United States in the BigQuery dataset, Canada was selected as an alternative for comparison.
+Vaccinations helped flatten the curve in the UK, as seen in the decline in both cases and deaths after mass vaccination began.
+
+The UK’s faster rollout may have contributed to earlier control over virus spread compared to Canada.
+
+This analysis shows the value of cloud-based public health analysis using BigQuery and SQL. Due to data availability limitations for the United States in the BigQuery dataset, Canada was selected as an alternative for comparison.
 
 ---
 
