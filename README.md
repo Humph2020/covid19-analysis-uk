@@ -42,7 +42,6 @@ ORDER BY date;
 
 
 ### Monthly Averages of New Cases and Deaths
-
 ```sql
 SELECT
   FORMAT_DATE('%Y-%m', date) AS month,
@@ -60,9 +59,7 @@ ORDER BY month;
 ### UK vs US Vaccination Comparison
 ```sql
 SELECT
-  date,
-  country_name,
-  cumulative_persons_vaccinated
+date,country_name,cumulative_persons_vaccinated
 FROM
   `bigquery-public-data.covid19_open_data.covid19_open_data`
 WHERE
@@ -72,13 +69,19 @@ ORDER BY date;
 ```
 ### 📈 Dashboard
 A visual dashboard was created using Looker Studio, displaying:
-▪︎ Daily trends
-▪︎ Monthly averages
-▪︎ Comparative vaccination charts
+- Daily trends
+- Monthly averages
+- Comparative vaccination charts
+
+### Key Insights
+- Clear spikes in cases during 2020 and 2021
+- Vaccination helped reduce deaths significantly in the UK by late 2021
+- UK vaccine rollout was faster than several other countries during early stages
 
 ### Conclusion
-This project demonstrates how to use BigQuery for public health analysis. It showcases:
-▪︎ Practical SQL skills
-▪︎ Data cleaning and aggregation
-▪︎ Data storytelling
-▪︎ Visual communication using dashboards
+This project demonstrates the power of cloud-based public health analysis using BigQuery and SQL. The NHS and other public institutions can benefit from fast, data-driven responses during future health emergencies.
+
+### Author
+Ezeh Humphery Okechukwu
+humpheryokechukwuezeh@gmail.com
+Location: Nigeria [Open to relocate to UK]
