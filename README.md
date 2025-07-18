@@ -1,27 +1,32 @@
-## 📂 Analyzing Global COVID-19 Trends and Vaccination Progress with a Focus on the UK
+### 📂 Analyzing Global COVID-19 Trends and Vaccination Progress with a Focus on the UK
 *A Public Health Data Analysis Using BigQuery*
 
 ## 📌 Description
 
-This project explores global COVID-19 trends with a focuse on the United Kingdom. Using BigQuery's public datasets, the analysis examines confirmed cases, death rates, and vaccination progress from early 2020 to 2023. This project also compares the UK's vaccination rollout with that of the United States.
+This project explores global COVID-19 trends with a focused lens on the United Kingdom. Using BigQuery's public datasets, the analysis examines confirmed cases, death rates, and vaccination progress from early 2020 to 2023.
+
+The goal is to derive actionable insights from public health data to support decision-making in healthcare, especially for environments like the NHS. The project also compares the UK's vaccination rollout with that of the United States, providing a benchmark for evaluating public health strategies.
+
+## ⚙️ Tools
+
+- Google BigQuery – SQL queries and data processing  
+- Looker Studio – Dashboard and visualizations  
+- GitHub – Version control and portfolio showcase  
+- Dataset Used: `bigquery-public-data.covid19_open_data.covid19_open_data`
 
 ##  Objectives
 
 - Analyze daily and monthly COVID-19 case and death trends in the UK  
 - Compare the UK’s vaccination progress with the US  
 - Visualize patterns to understand when major surges or improvements occurred  
-
-### 🔧 Tools Used:
-- Google BigQuery (SQL)
-- Excel (for charting)
-- GitHub (for documentation)
-- Public Datasets: `bigquery-public-data.covid19_open_data`
+- Create a shareable dashboard and GitHub repository for job applications (NHS/data analyst roles)
 
 ### 📊 Key Analyses
 
-## 1. UK Daily COVID-19 Cases and Deaths
+## UK Daily COVID-19 Cases and Deaths
 
 ```sql
+
 SELECT
   date,
   country_name,
@@ -35,10 +40,8 @@ WHERE
 ORDER BY date;
 ```
 
----
 
-## 2. Monthly Averages of New Cases and Deaths in the UK
-
+## Monthly Averages of New Cases and Deaths
 ```sql
 SELECT
   FORMAT_DATE('%Y-%m', date) AS month,
@@ -53,24 +56,17 @@ GROUP BY month
 ORDER BY month;
 ```
 
----
-
-## 3. UK vs US Cumulative Vaccination Comparison
-
+## UK vs US Vaccination Comparison
 ```sql
 SELECT
-  date,
-  MAX(CASE WHEN country_name = 'United Kingdom' THEN cumulative_persons_vaccinated ELSE NULL END) AS uk_vaccinated,
-  MAX(CASE WHEN country_name = 'United States' THEN cumulative_persons_vaccinated ELSE NULL END) AS us_vaccinated
+date,country_name,cumulative_persons_vaccinated
 FROM
   `bigquery-public-data.covid19_open_data.covid19_open_data`
 WHERE
   country_name IN ('United Kingdom', 'United States')
   AND cumulative_persons_vaccinated IS NOT NULL
-GROUP BY date
 ORDER BY date;
 ```
-
 ### 📈 Dashboard
 A visual dashboard was created using Looker Studio, displaying:
 - Daily trends
@@ -86,6 +82,6 @@ A visual dashboard was created using Looker Studio, displaying:
 This project demonstrates the power of cloud-based public health analysis using BigQuery and SQL. The NHS and other public institutions can benefit from fast, data-driven responses during future health emergencies.
 
 ### Author
-Humphery Okechukwu Ezeh 
+Ezeh Humphery Okechukwu
 humpheryokechukwuezeh@gmail.com
-Location: Nigeria [Open to relocate to UK or US]
+Location: Nigeria [Open to relocate to UK]
