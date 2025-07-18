@@ -13,8 +13,7 @@ This project presents global COVID-19 trends with a focuse on the United Kingdom
 
 ### 🔧 Tools Used:
 - Google BigQuery (SQL)
-- Excel (for charting)
-- GitHub (for documentation)
+- Google Spreadsheet/Excel (for charting)
 - Public Datasets: `bigquery-public-data.covid19_open_data`
 
 ---
