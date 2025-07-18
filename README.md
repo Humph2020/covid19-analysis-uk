@@ -3,12 +3,12 @@
 
 ### 📌 Description
 
-This project explores global COVID-19 trends with a focuse on the United Kingdom. Using BigQuery's public datasets, the analysis examines confirmed cases, death rates, and vaccination progress from early 2020 to 2023. This project also compares the UK's vaccination rollout with that of the United States.
+This project explores global COVID-19 trends with a focuse on the United Kingdom. Using BigQuery's public datasets, the analysis examines confirmed cases, death rates, and vaccination progress from early 2020 to 2023. This project also compares the UK's vaccination rollout with that of Canada.
 
 ###  Objectives
 
 - Analyze daily and monthly COVID-19 case and death trends in the UK  
-- Compare the UK’s vaccination progress with the US  
+- Compare the UK’s vaccination progress with Canada 
 - Visualize patterns to understand when major surges or improvements occurred  
 
 ### 🔧 Tools Used:
@@ -53,17 +53,17 @@ GROUP BY month
 ORDER BY month;
 ```
 
-### 3. UK vs US Cumulative Vaccination Comparison
+### 3. UK vs Canada Cumulative Vaccination Comparison
 
 ```sql
-SELECT
+ SELECT
   date,
   MAX(CASE WHEN country_name = 'United Kingdom' THEN cumulative_persons_vaccinated ELSE NULL END) AS uk_vaccinated,
-  MAX(CASE WHEN country_name = 'United States' THEN cumulative_persons_vaccinated ELSE NULL END) AS us_vaccinated
+  MAX(CASE WHEN country_name = 'Canada' THEN cumulative_persons_vaccinated ELSE NULL END) AS canada_vaccinated
 FROM
   `bigquery-public-data.covid19_open_data.covid19_open_data`
 WHERE
-  country_name IN ('United Kingdom', 'United States')
+  country_name IN ('United Kingdom', 'Canada')
   AND cumulative_persons_vaccinated IS NOT NULL
 GROUP BY date
 ORDER BY date;
