@@ -97,4 +97,3 @@ This analysis shows the value of cloud-based public health analysis using BigQue
 ### Author
 Humphery Okechukwu Ezeh 
 humpheryokechukwuezeh@gmail.com
-Location: Nigeria [Open to relocate to UK]
